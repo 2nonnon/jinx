@@ -5,6 +5,7 @@ const { handleToggleCollapse } = useSider()
 
 <template>
   <div
+    i-carbon-moon
     @click="handleToggleCollapse"
   />
 </template>

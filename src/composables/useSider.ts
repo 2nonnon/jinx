@@ -2,11 +2,11 @@ import { reactive, ref } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 
 const sider = reactive<RouteRecordRaw[]>([])
-const isCollapse = ref(false)
+const isNotCollapse = ref(true)
 
 export const useSider = () => {
   const handleToggleCollapse = () => {
-    isCollapse.value = !isCollapse.value
+    isNotCollapse.value = !isNotCollapse.value
   }
 
   const initSider = (modules: RouteRecordRaw[]) => {
@@ -15,7 +15,7 @@ export const useSider = () => {
   }
 
   return {
-    isCollapse,
+    isNotCollapse,
     handleToggleCollapse,
     sider,
     initSider,
