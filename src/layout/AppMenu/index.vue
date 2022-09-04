@@ -4,7 +4,7 @@ import SubMenu from './SubMenu.vue'
 </script>
 
 <template>
-  <ul class="app-menu">
+  <ul :id="menu.menu">
     <MenuItem>item1</MenuItem>
     <SubMenu>
       <template #title>
@@ -17,8 +17,8 @@ import SubMenu from './SubMenu.vue'
   </ul>
 </template>
 
-<style scoped>
-.app-menu {
-  width: 175px;
+<style module="menu">
+#menu {
+  width: 200px;
 }
 </style>

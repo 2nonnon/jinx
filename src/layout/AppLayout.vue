@@ -22,33 +22,35 @@ const onLeave: TransitionEvent = (el, done) => {
 </script>
 
 <template>
-  <section id="app-container" flex border>
+  <section :id="layout.appContainer" flex border>
     <Transition
       :css="false"
       @enter="onEnter"
       @leave="onLeave"
     >
-      <aside v-if="isNotCollapse" id="aside" border>
+      <aside v-if="isNotCollapse" :id="layout.aside" border>
         <AppMenu />
       </aside>
     </Transition>
-    <section id="main" border>
-      <header id="header" border>
+    <section :id="layout.main" border>
+      <header :id="layout.header" border>
         <AppHeader />
       </header>
-      <main id="content" border font-sans p="x-4 y-10" text="center gray-700 dark:gray-200">
+      <main :id="layout.content" border font-sans p="x-4 y-10" text="center gray-700 dark:gray-200">
         <router-view />
         <Footer />
       </main>
-      <footer id="footer" border>
+      <footer :id="layout.footer" border>
         <AppFooter />
       </footer>
     </section>
   </section>
 </template>
 
-<style scoped>
-#app-container {
+<style module="layout">
+@import '~/styles/common.css';
+
+#appContainer {
   height: 100%;
   max-height: 100%;
   overflow: hidden;

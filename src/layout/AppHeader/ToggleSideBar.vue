@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { useSider } from '../../composables/useSider'
-const { handleToggleCollapse } = useSider()
+const { isNotCollapse, handleToggleCollapse } = useSider()
 </script>
 
 <template>
   <div
-    i-carbon-moon
+    i-carbon:query-queue
+    :class="[{ [$style.active]: isNotCollapse }]"
     @click="handleToggleCollapse"
   />
 </template>
 
-<style scoped>
+<style module>
+.active {
+  transform: rotateY(180deg);
+}
 </style>

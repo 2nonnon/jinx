@@ -12,7 +12,25 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: AppLayout,
-    children: [...pages],
+    children: [
+      {
+        name: 'Home',
+        path: '',
+        meta: {
+          title: 'Home',
+        },
+        component: () => import('~/views/HomePage/index.vue'),
+      },
+      ...pages,
+      {
+        name: '404',
+        path: ':pathMatch(.*)*',
+        meta: {
+          title: '404',
+        },
+        component: () => import('~/views/NotFound.vue'),
+      },
+    ],
   },
 ]
 
