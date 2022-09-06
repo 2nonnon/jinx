@@ -38,7 +38,6 @@ const onLeave: TransitionEvent = (el, done) => {
       </header>
       <main :id="layout.content" border font-sans p="x-4 y-10" text="center gray-700 dark:gray-200">
         <router-view />
-        <Footer />
       </main>
       <footer :id="layout.footer" border>
         <AppFooter />

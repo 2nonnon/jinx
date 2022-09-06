@@ -4,7 +4,7 @@ import ToggleSideBar from './ToggleSideBar.vue'
 
 <template>
   <div :class="$style.header">
-    <ToggleSideBar /> Header
+    <ToggleSideBar /> Header <Footer />
   </div>
 </template>
 

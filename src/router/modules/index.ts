@@ -1,3 +1,3 @@
-import common from './common'
+import game from './game'
 
-export default [common]
+export default [game]

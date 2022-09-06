@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Home',
         path: '',
         meta: {
-          title: 'Home',
+          title: '首页',
         },
         component: () => import('~/views/HomePage/index.vue'),
       },
@@ -26,7 +26,8 @@ const routes: Array<RouteRecordRaw> = [
         name: '404',
         path: ':pathMatch(.*)*',
         meta: {
-          title: '404',
+          title: '页面不存在',
+          side: false,
         },
         component: () => import('~/views/NotFound.vue'),
       },
@@ -35,6 +36,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 console.log(pages)
+console.log(routes)
 
 const router = createRouter({
   scrollBehavior: () => {
@@ -46,9 +48,9 @@ const router = createRouter({
   routes,
 })
 
-// modules.forEach((_) => {
-//   router.addRoute(_)
-// })
+modules.forEach((_) => {
+  router.addRoute(_)
+})
 
 initSider(modules)
 
